@@ -46,7 +46,7 @@ class SubscribeForm {
 
   buildForm = () => {
     const $form = document.createElement('form');
-    $form.className = styles['form'];
+    $form.className = ['d-flex', 'flex-direction-column', 'align-items-center', 'mt-13'].join(' ');
 
     $form.appendChild(this.input);
     $form.appendChild(this.button);

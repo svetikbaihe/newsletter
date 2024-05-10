@@ -21,16 +21,16 @@ class Input {
 
   buildInputWrapper = () => {
     const $inputWrapper = document.createElement('div');
-    $inputWrapper.className = styles['input_wrapper'];
+    $inputWrapper.className = [styles.input_wrapper, 'd-flex', 'flex-direction-column', 'mb-12'].join(' ');
 
     const $input = document.createElement('input');
-    $input.className = styles['input'];
+    $input.className = [styles.input, 'pl-11'].join(' ');
 
     $input.setAttribute('id', `id-${this.name}`);
     $input.setAttribute('placeholder', this.placeholder);
 
     const $label = document.createElement('label');
-    $label.className = styles['label'];
+    $label.className = [styles.label, 'fw-70', 'mb-7'].join(' ');
 
     $label.setAttribute('for', `id-${this.name}`);
 

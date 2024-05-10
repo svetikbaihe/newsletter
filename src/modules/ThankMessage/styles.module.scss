@@ -2,10 +2,6 @@
 
 .thank_message_wrapper {
   background-color: $dark-slate-grey;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .thank-message {
@@ -13,32 +9,17 @@
   height: 521px;
   background-color: $white;
   border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   padding: 47px 64px 64px 64px;
 }
 
 .thank-message__img {
   width: 64px;
   height: 64px;
-  margin-bottom: 45px;
   position: relative;
   right: 155px;
-}
-
-.thank-message__title {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 27px;
 }
 
 .thank-message__text {
   line-height: 1.6;
   margin-bottom: 43px;
-}
-
-.inserted_email {
-  font-weight: bold;
 }

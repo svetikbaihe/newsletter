@@ -18,7 +18,7 @@ class Button {
 
   buildButton = () => {
     const $button = document.createElement('button');
-    $button.className = styles['button'];
+    $button.className = [styles.button, 'fw-70'].join(' ');
 
     $button.setAttribute('type', this.type);
 

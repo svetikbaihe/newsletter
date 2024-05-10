@@ -1,16 +1,9 @@
 @import '/src/assets/style/utils/colors.scss';
 
-.input_wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 24px;
-}
-
 .input {
   width: 375px;
   height: 51px;
   border-radius: 10px;
-  padding-left: 23px;
   border: 1px solid hsla(0, 0%, 46%, 0.3);
   font-size: 15px;
 
@@ -23,8 +16,6 @@
 }
 
 .label {
-  font-weight: 700;
-  margin-bottom: 13px;
   font-size: 12px;
 }
 
