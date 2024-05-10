@@ -1,0 +1,8 @@
+@import './src/assets/style/utils/reset.scss';
+@import './src/assets/style/utils/colors.scss';
+
+.input_error {
+  color: $tomato;
+  border: 1px solid $tomato;
+  background-color: $tomato-transparent;
+}
