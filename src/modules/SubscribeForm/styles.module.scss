@@ -3,3 +3,9 @@
   color: $tomato;
   margin-left: 189px;
 }
+
+@media screen and (max-width: 375px) {
+  .error_message {
+    margin-left: 161px;
+  }
+}

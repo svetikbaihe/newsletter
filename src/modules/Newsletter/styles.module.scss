@@ -2,7 +2,6 @@
 
 .newsletter_wrapper {
   background-color: $dark-slate-grey;
-  height: 100vh;
 }
 
 .newsletter {
@@ -40,4 +39,45 @@
 
 .img_newsletter {
   height: 592px;
+}
+
+@media screen and (max-width: 928px) {
+  .newsletter {
+    width: 100vw;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .news_inner_wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .text_container {
+    display: block;
+    height: auto;
+  }
+
+  .img_newsletter {
+    margin-bottom: 44px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .info_area {
+    padding: 10px;
+  }
+
+  .info_area__title {
+    font-size: 3rem;
+  }
+
+  .text_list li {
+    &::before {
+      right: 7px;
+    }
+  }
+
+  .info_area__text {
+    margin: 0 0 20px 37px;
+  }
 }

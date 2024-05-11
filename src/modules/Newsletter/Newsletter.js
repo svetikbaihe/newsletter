@@ -16,7 +16,7 @@ class Newsletter {
 
   buildNewsletterWrapper = () => {
     const $newsletterWrapper = document.createElement('div');
-    $newsletterWrapper.className = [styles.newsletter_wrapper, 'd-flex', 'just-content-center', 'align-items-center'].join(' ');
+    $newsletterWrapper.className = [styles.newsletter_wrapper, 'd-flex', 'just-content-center', 'align-items-center', 'hg-100vh'].join(' ');
 
     $newsletterWrapper.appendChild(this.buildNewsletter());
 
@@ -54,10 +54,10 @@ class Newsletter {
 
   buildInfoWrapper = () => {
     const $infoArea = document.createElement('div');
-    $infoArea.className = ['d-flex', 'flex-direction-column', 'align-items-center'].join(' ');
+    $infoArea.className = [styles['info_area'], 'd-flex', 'flex-direction-column', 'align-items-center'].join(' ');
 
     const $title = document.createElement('h1');
-    $title.className = ['fs-r-4', 'fw-70', 'mb-11', 'pr-8'].join(' ');
+    $title.className = [styles['info_area__title'], 'fs-r-4', 'fw-70', 'mb-11', 'pr-8'].join(' ');
 
     $title.innerText = 'Stay updated!';
 
