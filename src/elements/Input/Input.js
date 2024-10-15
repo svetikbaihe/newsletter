@@ -1,4 +1,4 @@
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss"
 
 class Input {
   type
@@ -6,42 +6,45 @@ class Input {
   label
   placeholder
 
-  constructor ({type, name, label, placeholder}) {
-    this.type = type;
-    this.name = name;
-    this.label = label;
-    this.placeholder = placeholder;
+  constructor({ type, name, label, placeholder }) {
+    this.type = type
+    this.name = name
+    this.label = label
+    this.placeholder = placeholder
 
-    this.buildInputWrapper();
+    this.buildInputWrapper()
   }
 
   get inputWrapper() {
-    return this.$inputWrapper;
+    return this.$inputWrapper
   }
 
   buildInputWrapper = () => {
-    const $inputWrapper = document.createElement('div');
-    $inputWrapper.className = [styles.input_wrapper, 'd-flex', 'flex-direction-column', 'mb-12'].join(' ');
+    const $inputWrapper = document.createElement("div")
 
-    const $input = document.createElement('input');
-    $input.className = [styles.input, 'pl-11'].join(' ');
+    $inputWrapper.className = styles["input_wrapper"]
 
-    $input.setAttribute('id', `id-${this.name}`);
-    $input.setAttribute('placeholder', this.placeholder);
+    const $input = document.createElement("input")
 
-    const $label = document.createElement('label');
-    $label.className = [styles.label, 'fw-70', 'mb-7'].join(' ');
+    $input.className = styles["input"]
 
-    $label.setAttribute('for', `id-${this.name}`);
+    $input.setAttribute("id", `id-${this.name}`)
+    $input.setAttribute("placeholder", this.placeholder)
 
-    $label.innerText = this.label;
+    const $label = document.createElement("label")
 
-    $inputWrapper.appendChild($label);
-    $inputWrapper.appendChild($input);
+    $label.className = styles["label"]
 
-    this.$input = $input;
-    this.$inputWrapper = $inputWrapper;
+    $label.setAttribute("for", `id-${this.name}`)
+
+    $label.innerText = this.label
+
+    $inputWrapper.appendChild($label)
+    $inputWrapper.appendChild($input)
+
+    // this.$input = $input;
+    this.$inputWrapper = $inputWrapper
   }
 }
 
-export default Input;
+export default Input

@@ -1,15 +1,5 @@
-@import '/src/assets/style/utils/colors.scss';
-
 .button {
-  width: 375px;
-  height: 55px;
-  border-radius: 10px;
-  color: $white;
-  background-color: $charcoal-grey;
-  border: none;
-  font-size: 15px;
-  &:hover {
-    background: linear-gradient(to right, $fantasy-romance, $tomato, $startling-orange);
-    box-shadow: 3px 3px 15px $tomato;
-  }
+  @apply rounded-lg bg-neutral-dark-slate-grey px-[1.35rem] py-5 font-bold text-neutral-white;
+  @apply from-primary-tomato to-orange-400 hover:bg-gradient-to-r hover:shadow-tomato-shadow;
+  @apply w-full;
 }

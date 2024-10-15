@@ -1,26 +1,13 @@
-@import '/src/assets/style/utils/colors.scss';
+.input_wrapper {
+  @apply mb-6 flex w-full flex-col 817:max-w-[23.3rem];
+}
 
 .input {
-  width: 375px;
-  height: 51px;
-  border-radius: 10px;
-  border: 1px solid hsla(0, 0%, 46%, 0.3);
-  font-size: 15px;
-
-  &:focus {
-    border: 1px solid #000;
-    color: $black;
-    background-color: $white;
-  };
-
+  @apply rounded-lg px-[2.7rem] py-4 pl-[1.375rem] outline outline-1 outline-neutral-grey;
+  @apply cursor-pointer focus:text-neutral-dark-slate-grey focus:outline-neutral-dark-slate-grey;
+  @apply focus:bg-neutral-white focus:outline focus:outline-1 focus:outline-neutral-dark-slate-grey;
 }
 
 .label {
-  font-size: 12px;
-}
-
-@media screen and (max-width: 375px) {
-  .label {
-    padding-left: 18px;
-  }
+  @apply mb-[0.875rem] flex justify-between text-xs font-bold;
 }

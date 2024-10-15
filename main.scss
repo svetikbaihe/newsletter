@@ -1,14 +1,31 @@
-@import './src/assets/style/utils/reset.scss';
-@import './src/assets/style/utils/colors.scss';
-@import './src/assets/style/utils/sizes.scss';
-@import './src/assets/style/utils/font-weight.scss';
-@import './src/assets/style/utils/flex.scss';
-@import './src/assets/style/utils/font-size.scss';
-@import './src/assets/style/utils/space.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.input_error {
-  color: $tomato;
-  border: 1px solid $tomato;
-  background-color: $tomato-transparent;
+@layer fonts {
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto-Regular.ttf) format('truetype')
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Roboto-Bold.ttf) format('truetype')
+  }
 }
 
+@layer base {
+  html,
+  body, 
+  #app {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+  }
+}

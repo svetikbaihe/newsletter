@@ -1,107 +1,109 @@
-import Button from "../../elements/Button/Button";
-import Input from "../../elements/Input/Input";
-import ThankMessage from "../ThankMessage/ThankMessage";
-import styles from './styles.module.scss';
-import $app from "../../assets/utils/app";
+import Button from "../../elements/Button/Button"
+import Input from "../../elements/Input/Input"
+import ThankMessage from "../ThankMessage/ThankMessage"
+import $app from "../../constants/app"
+import styles from "./styles.module.scss"
 
 class SubscribeForm {
   $errorMessage
-  constructor ({method}) {
-    this.method = method;
-  
-    this.button = new Button ({
-      type: 'submit',
-      text: 'Subscribe to monthly newsletter'
+  constructor({ method }) {
+    this.method = method
+
+    this.button = new Button({
+      type: "submit",
+      text: "Subscribe to monthly newsletter",
     }).button
 
-    this.input = new Input ({
-      type: 'email',
-      name: 'email',
-      label: 'Email address',
-      placeholder: 'email@company.com'
+    this.input = new Input({
+      type: "email",
+      name: "email",
+      label: "Email address",
+      placeholder: "email@company.com",
     }).inputWrapper
- 
+
     this.buildErrorMessage()
-    this.buildForm();
+    this.buildForm()
   }
 
   get form() {
-    return this.$form;
+    return this.$form
   }
 
   get errorMessage() {
-    return this.$errorMessage;
+    return this.$errorMessage
   }
 
   buildErrorMessage = () => {
-    const $errorMessage = document.createElement('span');
-    $errorMessage.className = styles['error_message'];
+    const $errorMessage = document.createElement("span")
 
-    const $input = this.input.childNodes[0];
-    $input.appendChild($errorMessage);
+    $errorMessage.className = styles["error_message"]
 
-    this.$errorMessage = $errorMessage;
+    const $input = this.input.childNodes[0]
 
+    $input.appendChild($errorMessage)
+
+    this.$errorMessage = $errorMessage
   }
 
   buildForm = () => {
-    const $form = document.createElement('form');
-    $form.className = ['d-flex', 'flex-direction-column', 'align-items-center', 'mt-13'].join(' ');
+    const $form = document.createElement("form")
 
-    $form.appendChild(this.input);
-    $form.appendChild(this.button);
+    $form.className = styles["form"]
 
-    $form.addEventListener("submit", (e) => this.handleSubmit(e));
-    this.$form = $form;
+    $form.appendChild(this.input)
+    $form.appendChild(this.button)
+
+    $form.addEventListener("submit", e => this.handleSubmit(e))
+
+    this.$form = $form
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault()
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const inputValue = this.input.childNodes[1].value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-    const $input = this.input.childNodes[1];
+    const inputValue = this.input.childNodes[1].value
 
-    if (inputValue === '') {
-        this.$errorMessage.innerText = "";
-        this.$errorMessage.innerText = "Please fill in the field";
-        $input.classList.add('input_error');
-    
-        return;
-    } 
-    if (
-      inputValue !== '' &&
-      !emailRegex.test(inputValue) 
-      && (this.$errorMessage.innerText !== '' 
-      || this.$errorMessage.innerText === '')
-    ) {
-        this.$errorMessage.innerText = "";
-        this.$errorMessage.innerText = "Valid email required";
-        $input.classList.add('input_error');
-        console.log('fgdfgdf');
+    const $input = this.input.childNodes[1]
 
-        return
-    } 
-    if (
-      inputValue !== '' 
-      && emailRegex.test(inputValue) 
-      && (this.$errorMessage.innerText !== '' 
-      || this.$errorMessage.innerText === '')
-    ) {
-        this.$errorMessage.innerText = "";
-        this.$form.parentElement.parentElement.parentElement.parentElement.remove();
+    if (inputValue === "") {
+      this.$errorMessage.innerText = ""
+      this.$errorMessage.innerText = "Please fill in the field"
+      $input.classList.add(styles["input_error"])
 
-        const thank = new ThankMessage({
-          email: inputValue
-        }).thankMessage;
-
-        $app.appendChild(thank);
-        return
+      return
     }
+    if (
+      inputValue !== "" &&
+      !emailRegex.test(inputValue) &&
+      (this.$errorMessage.innerText !== "" ||
+        this.$errorMessage.innerText === "")
+    ) {
+      this.$errorMessage.innerText = ""
+      this.$errorMessage.innerText = "Valid email required"
+      $input.classList.add(styles["input_error"])
 
-   
+      return
+    }
+    if (
+      inputValue !== "" &&
+      emailRegex.test(inputValue) &&
+      (this.$errorMessage.innerText !== "" ||
+        this.$errorMessage.innerText === "")
+    ) {
+      this.$errorMessage.innerText = ""
+      this.$form.parentElement.parentElement.parentElement.parentElement.remove()
+
+      const thank = new ThankMessage({
+        email: inputValue,
+      }).thankMessage
+
+      $app.appendChild(thank)
+
+      return
+    }
   }
 }
 
-export default SubscribeForm;
+export default SubscribeForm

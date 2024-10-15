@@ -1,11 +1,11 @@
-@import '/src/assets/style/utils/colors.scss';
 .error_message {
-  color: $tomato;
-  margin-left: 189px;
+  @apply text-primary-tomato;
 }
 
-@media screen and (max-width: 375px) {
-  .error_message {
-    margin-left: 161px;
-  }
+.form {
+  @apply flex flex-col items-center;
+}
+
+.input_error {
+  @apply bg-tomato-transparent text-primary-tomato outline outline-1 outline-primary-tomato;
 }

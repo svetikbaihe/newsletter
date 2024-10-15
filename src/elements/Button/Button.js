@@ -1,31 +1,32 @@
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 class Button {
   type
   text
   $button
 
-  constructor ({type, text}) {
-    this.type = type;
-    this.text =text;
+  constructor({ type, text }) {
+    this.type = type
+    this.text = text
 
-    this.buildButton();
+    this.buildButton()
   }
 
   get button() {
-    return this.$button;
+    return this.$button
   }
 
   buildButton = () => {
-    const $button = document.createElement('button');
-    $button.className = [styles.button, 'fw-70'].join(' ');
+    const $button = document.createElement("button")
 
-    $button.setAttribute('type', this.type);
+    $button.className = styles["button"]
 
-    $button.innerText = this.text;
+    $button.setAttribute("type", this.type)
 
-    this.$button = $button;
+    $button.innerText = this.text
+
+    this.$button = $button
   }
 }
 
-export default Button;
+export default Button
